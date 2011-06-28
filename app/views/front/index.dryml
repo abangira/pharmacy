@@ -1,0 +1,27 @@
+<page title="Home">
+
+  <body: class="front-page"/>
+
+  <content:>
+    <header class="content-header">
+      
+      <section class="welcome-message">
+        <center><h3>e-miti is about managing drug stocks and sales</h3></center>
+        
+        <center><%= image_tag("med_reduced.png", :alt => "e-miti") %></center>
+        <% if User.count == 0 -%>
+          <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>
+          <do with="&User.new"><% this.exempt_from_edit_checks = true %>
+            <signup-form/>
+          </do>
+        <% end -%>
+        
+      
+      </section>
+    </header>
+
+    <section class="content-body">
+    </section>
+  </content:>
+  
+</page>
